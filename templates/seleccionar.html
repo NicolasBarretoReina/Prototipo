@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seleccionar columnas</title>
+</head>
+<body>
+  <h2>Selecciona las columnas para graficar</h2>
+  <form action="/generar" method="post">
+    {% for col in columnas %}
+      <div>
+        <label>
+          <input type="checkbox" name="columnas" value="{{ col }}" checked />
+          {{ col }}
+        </label>
+      </div>
+    {% endfor %}
+
+    <input type="hidden" name="archivo" value="{{ archivo }}" />
+    <br />
+    <button type="submit">Generar archivo Excel con gráfico</button>
+  </form>
+</body>
+</html>
